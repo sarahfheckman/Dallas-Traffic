@@ -3,14 +3,19 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>uiCookies:Frame &mdash; Free Bootstrap Theme, Free HTML5 Template, Free Responsive Bootstrap Website Template</title>
-    <meta name="description" content="Free Bootstrap Theme by uicookies.com">
-    <meta name="keywords" content="Free website templates, Free bootstrap themes, Free template, Free bootstrap, Free website template">
+    <title>Project 2</title>
+    <meta name="description" content="Dallas Traffic Incidents">
+    <meta name="keywords" content="User-friendly maps and graphs to idealize optimal travel times in Dallas">
     
     <link rel="stylesheet" href="css/styles-merged.css">
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="stylesheet" href="fonts/icomoon/style.css">
-
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    crossorigin=""/>
+      <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+    integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+    crossorigin=""></script>
     <!--[if lt IE 9]>
       <script src="js/vendor/html5shiv.min.js"></script>
       <script src="js/vendor/respond.min.js"></script>
@@ -28,15 +33,15 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html" title="uiCookies:Frame">Frame</a>
+          <a class="navbar-brand" href="index.html" title="uiCookies:Frame">Project 2</a>
         </div>
 
         <div id="navbar-collapse" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="#" data-nav-section="home">Home</a></li>
-            <li><a href="#" data-nav-section="features">Features</a></li>
-            <li><a href="#" data-nav-section="pricing">Pricing</a></li>
-            <li><a href="#" data-nav-section="reviews">Reviews</a></li>
+            <li><a href="#" data-nav-section="features">Map</a></li>
+            <li><a href="#" data-nav-section="pricing">Graph</a></li>
+            <li><a href="#" data-nav-section="reviews">Report</a></li>
             <li><a href="#" data-nav-section="contact">Contact</a></li>
           </ul>
         </div>
@@ -47,41 +52,7 @@
       <div class="container">
         <div class="row intro-text">
           <div class="col-md-8 col-md-offset-2 text-center">
-            <h1 class="probootstrap-heading probootstrap-animate">uicookies.com Creates High Quality Bootstrap Template For <em>Free</em></h1>
-            <div class="probootstrap-subheading center">
-              <p class="probootstrap-animate"><a href="https://uicookies.com/" target="_blank" role="button" class="btn btn-primary">Get Them Now</a><a href="#features" class="btn btn-default smoothscroll" role="button">See Features</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="probootstrap-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="probootstrap-service-item probootstrap-animate" data-animate-effect="fadeIn">
-              <span class="icon icon-phone3"></span>
-              <h2>Mobile Optimize</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-              <p><a href="#" class="probootstrap-link">Learn More <i class="icon-chevron-right"></i></a></p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="probootstrap-service-item probootstrap-animate" data-animate-effect="fadeIn">
-              <span class="icon icon-wallet2"></span>
-              <h2>Increase Revenue</h2>
-              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-              <p><a href="#" class="probootstrap-link">Learn More <i class="icon-chevron-right"></i></a></p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="probootstrap-service-item probootstrap-animate" data-animate-effect="fadeIn">
-              <span class="icon icon-lightbulb"></span>
-              <h2>Smart Idea</h2>
-              <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-              <p><a href="#" class="probootstrap-link">Learn More <i class="icon-chevron-right"></i></a></p>
-            </div>
+            <h1 class="probootstrap-heading probootstrap-animate">User-friendly maps and graphs to idealize optimal travel times in Dallas</h1>
           </div>
         </div>
       </div>
@@ -91,123 +62,31 @@
       <div class="container">
         <div class="row text-center mb100">
           <div class="col-md-8 col-md-offset-2 probootstrap-section-heading">
-            <h2 class="mb30 text-black probootstrap-heading">Features</h2>
-            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+            <h2 class="mb30 text-black probootstrap-heading">Map it!</h2>
+            <p>Click the button below to see where most accidents occur.</p>
           </div>
         </div>
-        <!-- END row -->
-        <div class="row mb100">
-          <div class="col-md-8 col-md-pull-2 probootstrap-animate">
-            <p><img src="img/img_showcase_1.jpg" alt="Free Template by uicookies.com" class="img-responsive probootstrap-shadow"></p>
-          </div>
-          <div class="col-md-4 col-md-pull-1 probootstrap-section-heading">
-            <h3 class="text-primary probootstrap-heading-2">Big Benefits for Small Business</h3>
-            <p><p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p></p>
-            <ul class="probootstrap-list">
-              <li class="probootstrap-check">Pointing has no control</li>
-              <li class="probootstrap-check">A small river named Duden flows</li>
-              <li class="probootstrap-check">Roasted parts of sentences fly into your mouth</li>
-            </ul>
-          </div>
-        </div>
-        <!-- END row -->
-        <div class="row mb100">
-          <!-- <div class="col-md-8 col-md-pull-2"> -->
-          <div class="col-md-8 col-md-push-5 probootstrap-animate">
-            <p><img src="img/img_showcase_2.jpg" alt="Free Template by uicookies.com" class="img-responsive probootstrap-shadow"></p>
-          </div>
-          <!-- <div class="col-md-4 col-md-pull-1"> -->
-          <div class="col-md-4 col-md-pull-8 probootstrap-section-heading">
-            <h3 class="text-primary probootstrap-heading-2">How Frame is different</h3>
-            <p><p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p></p>
-            <ul class="probootstrap-list">
-              <li class="probootstrap-check">Pointing has no control</li>
-              <li class="probootstrap-check">A small river named Duden flows</li>
-              <li class="probootstrap-check">Roasted parts of sentences fly into your mouth</li>
-            </ul>
-          </div>
-        </div>
-        <!-- END row -->
-
-        <div class="row mb100">
-          <div class="col-md-8 col-md-pull-2 probootstrap-animate">
-            <p><img src="img/img_showcase_1.jpg" alt="Free Template by uicookies.com" class="img-responsive probootstrap-shadow"></p>
-          </div>
-          <div class="col-md-4 col-md-pull-1 probootstrap-section-heading">
-            <h3 class="text-primary probootstrap-heading-2">All in One Place</h3>
-            <p><p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p></p>
-            <ul class="probootstrap-list">
-              <li class="probootstrap-check">Pointing has no control</li>
-              <li class="probootstrap-check">A small river named Duden flows</li>
-              <li class="probootstrap-check">Roasted parts of sentences fly into your mouth</li>
-            </ul>
-          </div>
-        </div>
-        <!-- END row -->
-      </div>
-    </section>
-    <!-- END section -->
+        <!-- insert map -->
+        
 
     <section class="probootstrap-section" data-section="pricing">
       <div class="container">
         <div class="row text-center mb100">
           <div class="col-md-8 col-md-offset-2 probootstrap-section-heading">
-            <h2 class="mb30 text-black probootstrap-heading">Choose the plan that’s right for your business </h2>
-            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+            <h2 class="mb30 text-black probootstrap-heading">Graph it!</h2>
+            <p>CLick on the day you are most interested in traveling</p>
           </div>
         </div>
-        <!-- END row -->
-        <div class="row">
-          <div class="col-md-4">
-            <div class="probootstrap-pricing">
-              <h2>Starter</h2>
-              <p class="probootstrap-price"><strong>$22.99</strong></p>
-              <p class="probootstrap-note">This is a monthly recurring payment.</p>
-              <ul class="probootstrap-list text-left mb50">
-                <li class="probootstrap-check">Pointing has no control</li>
-                <li class="probootstrap-check">A small river named Duden flows</li>
-                <li class="probootstrap-check">Roasted parts of sentences fly into your mouth</li>
-              </ul>
-              <p><a href="#" class="btn btn-black">Get Started</a></p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="probootstrap-pricing probootstrap-popular probootstrap-shadow">
-              <h2>Business</h2>
-              <p class="probootstrap-price"><strong>$69.99</strong></p>
-              <p class="probootstrap-note">This is a monthly recurring payment.</p>
-              <ul class="probootstrap-list text-left mb50">
-                <li class="probootstrap-check">Pointing has no control</li>
-                <li class="probootstrap-check">A small river named Duden flows</li>
-                <li class="probootstrap-check">Roasted parts of sentences fly into your mouth</li>
-              </ul>
-              <p><a href="#" class="btn btn-primary">Get Started</a></p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="probootstrap-pricing">
-              <h2>Premium</h2>
-              <p class="probootstrap-price"><strong>$224.99</strong></p>
-              <p class="probootstrap-note">This is a monthly recurring payment.</p>
-              <ul class="probootstrap-list text-left mb50">
-                <li class="probootstrap-check">Pointing has no control</li>
-                <li class="probootstrap-check">A small river named Duden flows</li>
-                <li class="probootstrap-check">Roasted parts of sentences fly into your mouth</li>
-              </ul>
-              <p><a href="#" class="btn btn-black">Get Started</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- END section -->
+      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+      
+
 
      <section class="probootstrap-section probootstrap-bg-light" data-section="reviews">
       <div class="container">
         <div class="row text-center mb100">
           <div class="col-md-8 col-md-offset-2 probootstrap-section-heading">
-            <h2 class="mb30 text-black probootstrap-heading">That’s why 100,000+ Love Frame</h2>
-            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+            <h2 class="mb30 text-black probootstrap-heading">Report</h2>
+            <p>The Dallas Traffic Project was built by 3 data science students attending Southern Methodist University.</p>
           </div>
         </div>
         <!-- END row -->
@@ -225,7 +104,7 @@
               <blockquote>
                 <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
               </blockquote>
-              <p class="mb0">&mdash; Garry Alexander</p>
+              <p class="mb0">&mdash; Shade Petteway</p>
             </div>
           </div>
           <div class="col-md-4 col-sm-6 col-xs-12">
@@ -239,9 +118,9 @@
                 <i class="icon-star"></i>
               </p>
               <blockquote>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+                <p>Thinh is a child prodigy and certified genius. He has a PhDs in Engineering from Harvard, Stanford, and Oxford.</p>
               </blockquote>
-              <p class="mb0">&mdash; James Robertson</p>
+              <p class="mb0">&mdash; Thinh Nguyen</p>
             </div>
           </div>
           <div class="clearfix visible-sm-block"></div>
@@ -258,63 +137,10 @@
               <blockquote>
                 <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
               </blockquote>
-              <p class="mb0">&mdash; Ben Goodrich</p>
+              <p class="mb0">&mdash; Sarah Heckman</p>
             </div>
           </div>
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="probootstrap-testimonial">
-              <p><img src="img/person_4.jpg" class="img-responsive img-circle probootstrap-author-photo" alt="Free Template by uicookies.com"></p>
-              <p class="mb10 probootstrap-rate">
-                <i class="icon-star"></i>
-                <i class="icon-star"></i>
-                <i class="icon-star"></i>
-                <i class="icon-star"></i>
-                <i class="icon-star-outlined"></i>
-              </p>
-              <blockquote>
-                <p>And if she hasn’t been rewritten, then they are still using her.</p>
-              </blockquote>
-              <p class="mb0">&mdash; Kip Hugh</p>
-            </div>
-          </div>
-          <div class="clearfix visible-sm-block"></div>
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="probootstrap-testimonial">
-              <p><img src="img/person_2.jpg" class="img-responsive img-circle probootstrap-author-photo" alt="Free Template by uicookies.com"></p>
-              <p class="mb10 probootstrap-rate">
-                <i class="icon-star"></i>
-                <i class="icon-star"></i>
-                <i class="icon-star"></i>
-                <i class="icon-star"></i>
-                <i class="icon-star"></i>
-              </p>
-              <blockquote>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-              </blockquote>
-              <p class="mb0">&mdash; James Robertson</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="probootstrap-testimonial">
-              <p><img src="img/person_3.jpg" class="img-responsive img-circle probootstrap-author-photo" alt="Free Template by uicookies.com"></p>
-              <p class="mb10 probootstrap-rate">
-                <i class="icon-star"></i>
-                <i class="icon-star"></i>
-                <i class="icon-star"></i>
-                <i class="icon-star"></i>
-                <i class="icon-star"></i>
-              </p>
-              <blockquote>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-              </blockquote>
-              <p class="mb0">&mdash; Ben Goodrich</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
+          
     <section class="probootstrap-section">
       <div class="container">
          <div class="row text-center mb100">
@@ -354,29 +180,6 @@
     </section>
     <!-- END section -->
 
-    <section class="probootstrap-section probootstrap-cta">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 col-md-offset-2 text-center">
-            <h2 class="probootstrap-heading">Join With Over 100K Members</h2>
-            <p class="probootstrap-sub-heading">But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
-            <p><a href="#" class="btn btn-black">Get Started</a></p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- <section class"probootstrap-section probootstrap-cta">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-md-offset-3">
-            <h2 class="probootstrap-heading">Join With Over 100K Members</h2>
-            <p class="probootstrap-sub-heading">But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
-
-          </div>
-        </div>
-      </div>
-    </section> -->
-    <!-- END section -->
     <section class="probootstrap-section probootstrap-bg-light" data-section="contact">
       <div class="container">
         <div class="row">
@@ -390,13 +193,13 @@
                 <input type="email" class="form-control" placeholder="Your Email">
               </div>
               <div class="form-group">
-                <input type="email" class="form-control" placeholder="Your Phone">
+                <input type="phone" class="form-control" placeholder="Your Phone">
               </div>
               <div class="form-group">
                 <textarea class="form-control"cols="30" rows="10" placeholder="Write a Message"></textarea>
               </div>
               <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Sebd Message">
+                <input type="submit" class="btn btn-primary" value="Send Message">
               </div>
             </form>
           </div>
@@ -404,21 +207,12 @@
             <ul class="probootstrap-contact-details">
               <li>
                 <span class="text-uppercase">Email</span>
-                probootstrap@gmail.com
-              </li>
-              <li>
-                <span class="text-uppercase">Phone</span>
-                +30 976 1382 9921
-              </li>
-              <li>
-                <span class="text-uppercase">Fax</span>
-                +30 976 1382 9922
+                dallastrafficreport@gmail.com
               </li>
               <li>
                 <span class="text-uppercase">Address</span>
-                San Francisco, CA <br>
-                4th Floor8 Lower  <br>
-                San Francisco street, M1 50F
+                6425 Boaz Lane <br>
+                Dallas, Texas 75205  <br>
               </li>
             </ul>
           </div>
