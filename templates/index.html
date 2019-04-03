@@ -190,16 +190,16 @@
                 <input type="text" class="form-control" placeholder="Your Name">
               </div>
               <div class="form-group">
-                <input type="email" class="form-control" placeholder="Your Email">
+                <input type="email" class="form-control" id="userEmail" placeholder="Your Email">
               </div>
               <div class="form-group">
                 <input type="phone" class="form-control" placeholder="Your Phone">
               </div>
               <div class="form-group">
-                <textarea class="form-control"cols="30" rows="10" placeholder="Write a Message"></textarea>
+                <textarea class="form-control"cols="30" rows="10" id="msgBody" placeholder="Write a Message"></textarea>
               </div>
               <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Send Message">
+                <input type="submit" onclick="Email.send()" class="btn btn-primary" value="Submit">
               </div>
             </form>
           </div>
@@ -240,6 +240,6 @@
 
     <script src="js/scripts.min.js"></script>
     <script src="js/custom.js"></script>
-
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
   </body>
 </html>
