@@ -3,7 +3,7 @@
 # Compiled class file
 *.class
 # config file
-/frame/js/.config.js
+.config.js
 # Log file
 *.log
 
