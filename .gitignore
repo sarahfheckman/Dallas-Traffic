@@ -25,4 +25,8 @@
 hs_err_pid*
 
 # config file
+<<<<<<< HEAD
 **/logs/config.js
+=======
+config.js
+>>>>>>> 5baaf3a5ce6d9c549aa273670f2130b70e1ddcdf
