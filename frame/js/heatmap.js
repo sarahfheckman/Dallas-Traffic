@@ -1,7 +1,6 @@
 // read CSV with accident data 
-d3.csv("./CleanPo_po.csv", function(error, accidentData) {
-  if (error) return console.warn(error);
-  
+d3.json(url, function(accidentData) {
+    
   console.log(accidentData);
 
   // create heat layer 
