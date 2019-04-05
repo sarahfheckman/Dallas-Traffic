@@ -5,6 +5,7 @@ import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
+from sqlalchemy import 
 
 from flask import Flask, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
@@ -12,7 +13,7 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 
 # rendering flask
-@app.route("/")
+@app.route("/")s
 def index():
     "return data for map"
     return render_template("index.html")
