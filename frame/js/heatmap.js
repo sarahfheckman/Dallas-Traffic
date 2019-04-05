@@ -10,10 +10,10 @@ L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   accessToken: API_KEY
 }).addTo(myMap);
 
-var url = "https://data.sfgov.org/resource/cuks-n6tp.json?$limit=10000";
+var url = "/accidents";
 
 // grabbing json data
-d3.json(url, function(response) {
+d3.json(url).then(function(response) {
   // seeing json data
   console.log(response);
    
@@ -34,3 +34,5 @@ d3.json(url, function(response) {
   }).addTo(myMap);
 
 });
+
+myMap.invalidateSize();

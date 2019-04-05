@@ -28,6 +28,11 @@ body {
 
 #mapid { height: 180px; }
 
+#map {
+  height: 1000px;
+  width: 1000px;
+}
+
 ::-moz-selection {
   background: #000000;
   color: #ffffff;
