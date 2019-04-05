@@ -3,8 +3,6 @@ import pandas as pd
 import mysql.connector
 
 import sqlalchemy
-from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
 
 from flask import Flask, jsonify, render_template, request, redirect
@@ -36,10 +34,8 @@ def send():
 
 # jsonifying stuff
 @app.route('/dallas_traffic')
-def getdata():
-                                
-     final = pd.read_sql_query('select * from dallas_accidents', con=engine)
-                                               
+def getdata():               
+     final = pd.read_sql_query('select * from dallas_accidents', con=engine)                                 
      return final.to_json(orient='records')
 
 if __name__ == "__main__":
