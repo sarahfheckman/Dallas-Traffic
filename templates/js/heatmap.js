@@ -1,25 +1,48 @@
-// read CSV with accident data 
-d3.json(url, function(accidentData) {
+// read SQLlite db by referencing our JS app route to the SQLlite db
+function buildheatLayer(accident) {
+  d3.json(`/accidents/${accident}`).then((data) => {
     
-  console.log(accidentData);
+  console.log(heatLayer);
 
-  // create heat layer 
-  accidentData.forEach(function(data) {
+  // create heat layer
+  heatLayer.forEach(function(heatLayer) {
     // creating blank array for accident locations
     var accidentLocations = []
-    // looping through 
+    // looping through latitude & longitude to construct coordinates
     for (var i = 0; i < data.length; i++) {
-      var location = data[i].Coordinates;
-      if (location) {
-        accidentLocations.push([Location])
+      var latitude = data[i].Latitude;
+      var longitude = data[i].Longitude;
+      if (latitude & longitude) {
+        accidentLocations.push([latitude, longitude])
       }
-    }
-    // applying heat layer to crime scene array 
+  }
+    // applying heat layer to traffic accident array
     var heat = L.heatLayer(accidentLocations, {
     radius: 20,
     blur: 35
   }).addTo(myMap);
-})
+});
+});
+};
+
+// grab data with d3 to build clusters 
+function buildMarkerClusters(accident) {
+  d3.json(`/accidents/${accident}`).then((data) => {
+    // create marker cluster group 
+    var markers = L.markerClusterGroup();
+    // loop through 
+    for (var i = 0; i < data.length; i++) {
+      var latitude = data[i].Latitude;
+      var longitude = data[i].Longitude;
+      if (latitude & longitude) {
+        accidentLocations.push([latitude, longitude])
+        .bindPopup(response[i].descriptor);
+      }
+    }
+  // add layers to map 
+  myMap.addLayer(markers);
+});
+};
 
 // light layer 
 var lightmap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
@@ -45,7 +68,7 @@ var baseMaps = {
 
 // Overlays that may be toggled on or off
 var overlayMaps = {
-  Accidents: heat
+  Accidents: heat, cluster
 };
 
 // create map
@@ -53,5 +76,4 @@ var myMap = L.map("map", {
   center: [32.7767, -96.7970],
   zoom: 13,
   layers: [baseMaps, overlayMaps]
-})
 });

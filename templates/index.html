@@ -16,6 +16,7 @@
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
     integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
     crossorigin=""></script>
+    <link rel="stylesheet" href="css/maps.css">
     <!--[if lt IE 9]>
       <script src="js/vendor/html5shiv.min.js"></script>
       <script src="js/vendor/respond.min.js"></script>
@@ -39,7 +40,7 @@
         <div id="navbar-collapse" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="#" data-nav-section="home">Home</a></li>
-            <li><a href="#" data-nav-section="features">Map</a></li>
+            <li><a href="#" data-nav-section="map">Map</a></li>
             <li><a href="#" data-nav-section="pricing">Graph</a></li>
             <li><a href="#" data-nav-section="reviews">Report</a></li>
             <li><a href="#" data-nav-section="contact">Contact</a></li>
@@ -58,19 +59,22 @@
       </div>
     </section>
 
-    <section class="probootstrap-section probootstrap-bg-light" id="features" data-section="features">
+    <section class="probootstrap-section probootstrap-bg-light" data-section="map">
       <div class="container">
         <div class="row text-center mb100">
           <div class="col-md-8 col-md-offset-2 probootstrap-section-heading">
             <h2 class="mb30 text-black probootstrap-heading">Map it!</h2>
             <p>This is where most accidents occur.</p>
-            <div id="map">
-            <script type="text/javascript" src="/js/config.js"></script>
-            <script type="text/javascript" src="/js/heatmap.js"></script>
-            <script type="text/javascript" src="/js/leaflet-heat.js"></script>  
-            </div>
           </div>
-        <!-- insert map -->
+        </div>
+        <div class="row text-center mb100">
+          <div class="col-12">
+          <div id="map"></div>
+          </div> 
+
+        </div>  
+      </div>  
+
         
 
     <section class="probootstrap-section" data-section="pricing">
@@ -78,7 +82,7 @@
         <div class="row text-center mb100">
           <div class="col-md-8 col-md-offset-2 probootstrap-section-heading">
             <h2 class="mb30 text-black probootstrap-heading">Graph it!</h2>
-            <p>CLick on the day you are most interested in traveling</p>
+            <p>Click on the day you are most interested in traveling</p>
             <div class="chart">
             </div>
             <script type="text/javascript" src="app.js"></script>
@@ -108,7 +112,7 @@
                 <i class="icon-star"></i>
               </p>
               <blockquote>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+                <p>Shade's bio goes here.</p>
               </blockquote>
               <p class="mb0">&mdash; Shade Petteway</p>
             </div>
@@ -124,7 +128,8 @@
                 <i class="icon-star"></i>
               </p>
               <blockquote>
-                <p>Thinh is a child prodigy and certified genius. He has a PhDs in Engineering from Harvard, Stanford, and Oxford.</p>
+                <p>Thinh is a child prodigy and certified genius. He taught Jennifer Lawrence how to swing dance for Silver Linings Playbook, but had to cut communication with the starlet when she got too clingy.</p>
+                <p>But seriously, Thinh was responsible for creating,</p>
               </blockquote>
               <p class="mb0">&mdash; Thinh Nguyen</p>
             </div>
@@ -147,42 +152,7 @@
             </div>
           </div>
           
-    <section class="probootstrap-section">
-      <div class="container">
-         <div class="row text-center mb100">
-          <div class="col-md-8 col-md-offset-2 probootstrap-section-heading">
-            <h2 class="mb30 text-black probootstrap-heading">Try It Today</h2>
-            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-            <p><a href="#" class="btn btn-primary">Get It Now</a></p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="row">
-              <div class="col-md-12">
-                <p><img src="img/laptop_1.jpg" alt="Free Template by uicookies.com" class="img-responsive"></p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <h4 class="text-black probootstrap-check-2"> What is Instant?</h4>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
 
-                <h4 class="text-black probootstrap-check-2">How do I use the new features of Frame App?</h4>
-                <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. </p>
-              </div>
-              <div class="col-md-6">
-                <h4 class="text-black probootstrap-check-2">Is this available to my country?</h4>
-                <p>The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way.
-</p>
-
-                <h4 class="text-black probootstrap-check-2">I have technical problem who do I email?</h4>
-                <p>But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
     <!-- END section -->
 
@@ -243,9 +213,10 @@
     </footer>
 
     
-
-    <script src="js/scripts.min.js"></script>
-    <script src="js/custom.js"></script>
-
+    <script type="text/javascript" src="/js/leaflet-heat.js"></script>  
+    <script src="/js/scripts.min.js"></script>
+    <script src="/js/custom.js"></script>
+    <script type="text/javascript" src="/js/config.js"></script>
+    <script type="text/javascript" src="/js/heatmap.js"></script>
   </body>
-</html>
+</html> 
