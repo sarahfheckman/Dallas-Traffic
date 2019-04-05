@@ -7,15 +7,16 @@
     <meta name="description" content="Dallas Traffic Incidents">
     <meta name="keywords" content="User-friendly maps and graphs to idealize optimal travel times in Dallas">
     
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles-merged.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/icomoon/style.css') }}">
+    <link rel="stylesheet" href="css/styles-merged.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
     integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
     crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
     integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
     crossorigin=""></script>
+    <link rel="stylesheet" href="css/maps.css">
     <!--[if lt IE 9]>
       <script src="js/vendor/html5shiv.min.js"></script>
       <script src="js/vendor/respond.min.js"></script>
@@ -159,23 +160,22 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <form action="/send" method="POST"  role="form", name="petform", class="probootstrap-form">
-            <!-- <form action="" class="probootstrap-form"> -->
+            <form action="" class="probootstrap-form">
               <h2 class="text-black mt0">Get In Touch</h2>
               <div class="form-group">
-                <input type="text" class="form-control" name="userName" placeholder="Your Name">
+                <input type="text" class="form-control" placeholder="Your Name">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" name=userEmail placeholder="Your Email">
+                <input type="email" class="form-control" placeholder="Your Email">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" name="phone" placeholder="Your Phone">
+                <input type="phone" class="form-control" placeholder="Your Phone">
               </div>
               <div class="form-group">
-                <textarea type="text" class="form-control"cols="30" rows="10" name="msgBody" placeholder="Write a Message"></textarea>
+                <textarea class="form-control"cols="30" rows="10" placeholder="Write a Message"></textarea>
               </div>
               <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Hit me!">
+                <input type="submit" class="btn btn-primary" value="Send Message">
               </div>
             </form>
           </div>
@@ -212,17 +212,11 @@
       </div>
     </footer>
 
-    <!-- <script type="text/javascript" href="{{ url_for('static', filename='js/leaflet-heat.js') }}"></script>
-    <script type="text/javascript" src="/js/leaflet-heat.js"></script> 
+    
+    <script type="text/javascript" src="/js/leaflet-heat.js"></script>  
     <script src="/js/scripts.min.js"></script>
     <script src="/js/custom.js"></script>
     <script type="text/javascript" src="/js/config.js"></script>
-    <script type="text/javascript" src="/js/heatmap.js"></script> -->
-
-    <script type="text/javascript" src="{{ url_for('static', filename='js/leaflet-heat.js') }}"></script>  
-    <script src="{{ url_for('static', filename='js/scripts.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/config.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/heatmap.js') }}"></script>
+    <script type="text/javascript" src="/js/heatmap.js"></script>
   </body>
 </html> 
