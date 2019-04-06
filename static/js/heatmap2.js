@@ -24,7 +24,7 @@ var url = "/dallas_traffic";
 var response = d3.json(url).then(function(response) {
   // seeing json data
   console.log(response);
-  // var Cluster = L.markerClusterGroup();
+  var Cluster = L.markerClusterGroup();
   // creating empty array for crime pinpoints
   var heatArray = [];
   // // looping through json data 
@@ -33,10 +33,10 @@ var response = d3.json(url).then(function(response) {
     var longitudeC = response[i].Longitude;
   
     // adding crime scenes to array where heatmap will be applied 
-    // Cluster.addLayer(L.marker([latitudeC, longitudeC])
-    //     .bindPopup("<h2> Type of Incident : " + response[i].dfasd +
-    //     "</h2><hr><h3>" + response[i].asdas +
-    //       "</h3><hr><p>" + response[i].sdad + "</p>"));
+    Cluster.addLayer(L.marker([latitudeC, longitudeC])
+        .bindPopup("<h2> Type of Incident : " + response[i]['Type of Incident'] +
+        "</h2><hr><h3>" + response[i]['Type  Location'] +
+          "</h3><hr><p>" + response[i]['Update Date'] + "</p>"));
     heatArray.push([latitudeC, longitudeC]);
     
   }
@@ -49,7 +49,7 @@ var response = d3.json(url).then(function(response) {
 
   var overlayMaps = {
     "Heatmap": heat,
-    // "Cluster": Cluster
+    "Cluster": Cluster
   };
 
   var baseMaps = {

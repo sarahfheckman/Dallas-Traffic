@@ -40,5 +40,14 @@ def getdata():
      final = pd.read_sql_query('select * from dallas_accidents', con=engine)                                 
      return final.to_json(orient='records')
 
+# pulling data 
+@app.route('/selection/<selection>')
+def dataSelection(selection):
+    """ pulling information for selected day """ 
+    results = pd.read_sql_query("select * from dallas_accidents WHERE `Day of Week` = '%s'" %(selection), con=engine)
+    return results.to_json(orient='records')
+
+
+
 if __name__ == "__main__":
     app.run(debug=True)
