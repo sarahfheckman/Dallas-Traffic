@@ -1,6 +1,37 @@
+var API_KEY = "pk.eyJ1Ijoic2ZoZWNrbWFuIiwiYSI6ImNqdGdrMmdvMDI0Z280NG51aW56NTN1bmQifQ.r5vF7G3SuSO3YwRIs98mZw";
+
+// basemaps 
+var baseMaps = {
+  Light: lightmap,
+  Dark: darkmap
+};
+
+// Overlays that may be toggled on or off
+// var overlayMaps = {
+//   Accidents: heat, cluster
+// };
+
+// create map
+document.getElementById('map').innerHTML = "<div id='map' style='width: 100%; height: 100%;'></div>";
+
+var myMap = L.map("map", {
+  center: [32.7767, -96.7970],
+  zoom: 13,
+  //layers: [baseMaps, overlayMaps]
+});
+
+  // Create the tile layer that will be the background of our map
+  L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
+    attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
+    maxZoom: 18,
+    id: "mapbox.streets",
+    accessToken: API_KEY
+  }).addTo(myMap);
+
+
 // read SQLlite db by referencing our JS app route to the SQLlite db
 function buildheatLayer(accident) {
-  d3.json(`/accidents/${accident}`).then((data) => {
+  d3.json("/dallas_traffic/").then((data) => {
     
   console.log(heatLayer);
 
@@ -27,7 +58,7 @@ function buildheatLayer(accident) {
 
 // grab data with d3 to build clusters 
 function buildMarkerClusters(accident) {
-  d3.json(`/accidents/${accident}`).then((data) => {
+  d3.json("/dallas_traffic").then((data) => {
     // create marker cluster group 
     var markers = L.markerClusterGroup();
     // loop through 
@@ -60,20 +91,4 @@ var darkmap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?
   accessToken: API_KEY
 });
 
-// basemaps 
-var baseMaps = {
-  Light: lightmap,
-  Dark: darkmap
-};
 
-// Overlays that may be toggled on or off
-var overlayMaps = {
-  Accidents: heat, cluster
-};
-
-// create map
-var myMap = L.map("map", {
-  center: [32.7767, -96.7970],
-  zoom: 13,
-  layers: [baseMaps, overlayMaps]
-});

@@ -48,7 +48,7 @@
       </div>
     </nav>
     
-    <section class="probootstrap-hero prohttp://localhost/probootstrap/frame/#featuresbootstrap-slant" style="background-image: url(img/image_1.jpg);" data-section="home" data-stellar-background-ratio="0.5">
+    <section class="probootstrap-hero pro http://localhost/probootstrap/frame/#featuresbootstrap-slant" style="background-image: url(static/img/image_1.jpg);" data-section="home" data-stellar-background-ratio="0.5">
       <div class="container">
         <div class="row intro-text">
           <div class="col-md-8 col-md-offset-2 text-center">
@@ -84,7 +84,8 @@
             <p>Click on the day you are most interested in traveling</p>
             <div class="chart">
             </div>
-            <script type="text/javascript" src="app.js"></script>
+            <!-- <script type="text/javascript" src="app.js"></script> -->
+            <script type="text/javascript" src="{{ url_for('static', filename='js/heatmap.js') }}"></script>
           </div>
         </div>
       
@@ -159,22 +160,22 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <form action="" class="probootstrap-form">
+            <form action="/send" method="POST"  role="form", name="petform", class="probootstrap-form">
               <h2 class="text-black mt0">Get In Touch</h2>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Name">
+                <input type="text" class="form-control" name="userName" placeholder="Your Name">
               </div>
               <div class="form-group">
-                <input type="email" class="form-control" placeholder="Your Email">
+                <input type="text" class="form-control" name=userEmail placeholder="Your Email">
               </div>
               <div class="form-group">
-                <input type="phone" class="form-control" placeholder="Your Phone">
+                <input type="text" class="form-control" name="phone" placeholder="Your Phone">
               </div>
               <div class="form-group">
-                <textarea class="form-control"cols="30" rows="10" placeholder="Write a Message"></textarea>
+                <textarea type="text" class="form-control"cols="30" rows="10" name="msgBody" placeholder="Write a Message"></textarea>
               </div>
               <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Send Message">
+                <input type="submit" class="btn btn-primary" value="Hit me!">
               </div>
             </form>
           </div>
@@ -211,11 +212,12 @@
       </div>
     </footer>
 
-    
-    <script type="text/javascript" src="/js/leaflet-heat.js"></script>  
-    <script src="/js/scripts.min.js"></script>
-    <script src="/js/custom.js"></script>
-    <script type="text/javascript" src="/js/config.js"></script>
-    <script type="text/javascript" src="/js/heatmap.js"></script>
+
+     
+    <script src="{{ url_for('static', filename='js/scripts.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/config.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/heatmap2.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/leaflet-heat.js') }}"></script> 
   </body>
 </html> 
