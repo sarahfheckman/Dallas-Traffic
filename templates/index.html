@@ -176,16 +176,16 @@
             <form action="/send" method="POST"  role="form", name="petform", class="probootstrap-form">
               <h2 class="text-black mt0">Get In Touch</h2>
               <div class="form-group">
-                <input type="text" class="form-control" name="userName" placeholder="Your Name">
+                <input type="text" class="form-control" name="userName" placeholder="Your Name" required>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" name=userEmail placeholder="Your Email">
+                <input type="text" class="form-control" name=userEmail placeholder="Your Email" required>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" name="phone" placeholder="Your Phone">
+                <input type="text" class="form-control" name="phone" placeholder="Your Phone" required>
               </div>
               <div class="form-group">
-                <textarea type="text" class="form-control"cols="30" rows="10" name="msgBody" placeholder="Write a Message"></textarea>
+                <textarea type="text" class="form-control"cols="30" rows="10" name="msgBody" placeholder="Write a Message" required></textarea>
               </div>
               <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Send">
