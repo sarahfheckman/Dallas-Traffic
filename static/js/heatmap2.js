@@ -34,9 +34,9 @@ var response = d3.json(url).then(function(response) {
   
     // adding crime scenes to array where heatmap will be applied 
     Cluster.addLayer(L.marker([latitudeC, longitudeC])
-        .bindPopup("<h2> Type of Incident : " + response[i].dfasd +
-        "</h2><hr><h3>" + response[i].asdas +
-          "</h3><hr><p>" + response[i].sdad + "</p>"));
+        .bindPopup("<h2> Type of Incident : " + response[i]['Type of Incident'] +
+        "</h2><hr><h3>" + response[i]['Type  Location'] +
+          "</h3><hr><p>" + response[i]['Update Date'] + "</p>"));
     heatArray.push([latitudeC, longitudeC]);
     
   }
