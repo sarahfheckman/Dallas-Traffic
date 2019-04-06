@@ -5,10 +5,11 @@ import mysql.connector
 import sqlalchemy
 from sqlalchemy import create_engine
 
-from flask import Flask, jsonify, render_template, request, redirect
+from flask import Flask, jsonify, render_template, request, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+app.secret_key = "super secret key"
 
 from config import password
 rds_connection_string = ("root:"+password+"@127.0.0.1:3306/dallastraffic")
@@ -29,6 +30,7 @@ def send():
         
     engine.execute('INSERT INTO userdata (name, email, phone, msg) VALUES\
                          (%s, %s, %s, %s)', (name, email, phone, msg))
+    flash('Thank you for your message! We will be in touch soon.')
     return redirect("/", code=302)
     
 
