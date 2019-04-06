@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Project 2</title>
+    <title>DFW Commute</title>
     <meta name="description" content="Dallas Traffic Incidents">
     <meta name="keywords" content="User-friendly maps and graphs to idealize optimal travel times in Dallas">
     
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles-merged.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/maps.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='fonts/icomoon/style.css') }}">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
     integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -33,7 +34,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html" title="uiCookies:Frame">Project 2</a>
+          <a class="navbar-brand" href="index.html" title="uiCookies:Frame">DFW Commute</a>
         </div>
 
         <div id="navbar-collapse" class="navbar-collapse collapse">
@@ -41,13 +42,26 @@
             <li class="active"><a href="#" data-nav-section="home">Home</a></li>
             <li><a href="#" data-nav-section="map">Map</a></li>
             <li><a href="#" data-nav-section="pricing">Graph</a></li>
-            <li><a href="#" data-nav-section="reviews">Report</a></li>
+            <li><a href="#" data-nav-section="reviews">About Us</a></li>
             <li><a href="#" data-nav-section="contact">Contact</a></li>
           </ul>
         </div>
       </div>
     </nav>
-    
+    <div class="container" style="min-height:100% width:80%">
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-warning alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+            {{message}}
+            </div>
+          {% endfor %}
+          {% endif %}
+        {% endwith %}
+        
+        {% block body %}{% endblock %}
+    </div>
     <section class="probootstrap-hero pro http://localhost/probootstrap/frame/#featuresbootstrap-slant" style="background-image: url(static/img/image_1.jpg);" data-section="home" data-stellar-background-ratio="0.5">
       <div class="container">
         <div class="row intro-text">
@@ -68,7 +82,7 @@
         </div>
         <div class="row text-center mb100">
           <div class="col-12">
-          <div id="map"></div>
+          <center><div id="map"></div></center>
           </div> 
 
         </div>  
@@ -85,7 +99,7 @@
             <div class="chart">
             </div>
             <!-- <script type="text/javascript" src="app.js"></script> -->
-            <script type="text/javascript" src="{{ url_for('static', filename='js/heatmap.js') }}"></script>
+            <!-- <script type="text/javascript" src="{{ url_for('static', filename='js/heatmap2.js') }}"></script> -->
           </div>
         </div>
       
@@ -96,14 +110,14 @@
         <div class="row text-center mb100">
           <div class="col-md-8 col-md-offset-2 probootstrap-section-heading">
             <h2 class="mb30 text-black probootstrap-heading">Report</h2>
-            <p>The Dallas Traffic Project was built by 3 data science students attending Southern Methodist University.</p>
+            <p>The Dallas Traffic Project was built by 3 Data Science students attending Southern Methodist University.</p>
           </div>
         </div>
         <!-- END row -->
         <div class="row">
           <div class="col-md-4 col-sm-6 col-xs-12">
             <div class="probootstrap-testimonial">
-              <p><img src="img/person_1.jpg" class="img-responsive img-circle probootstrap-author-photo" alt="Free Template by uicookies.com"></p>
+              <p><img src="https://media.licdn.com/dms/image/C4E03AQEZhvNblO2Zdw/profile-displayphoto-shrink_200_200/0?e=1559779200&v=beta&t=GWALk0P3YX3_2DcaGGFTaaNYZYXkj7-QRJFNHOMHs5c" class="img-responsive img-circle probootstrap-author-photo" alt="Free Template by uicookies.com"></p>
               <p class="mb10 probootstrap-rate">
                 <i class="icon-star"></i>
                 <i class="icon-star"></i>
@@ -112,14 +126,14 @@
                 <i class="icon-star"></i>
               </p>
               <blockquote>
-                <p>Shade's bio goes here.</p>
+                <p>“When we have all data online it will be great for humanity. It is a prerequisite to solving many problems that humankind faces.”</p>
               </blockquote>
               <p class="mb0">&mdash; Shade Petteway</p>
             </div>
           </div>
           <div class="col-md-4 col-sm-6 col-xs-12">
             <div class="probootstrap-testimonial">
-              <p><img src="img/person_2.jpg" class="img-responsive img-circle probootstrap-author-photo" alt="Free Template by uicookies.com"></p>
+              <p><img src="https://media.licdn.com/dms/image/C5603AQEGHbGvuOMhDw/profile-displayphoto-shrink_800_800/0?e=1559779200&v=beta&t=6mo9T5KflJTQuU17DM9j6nxtCvYFd4MtXoQaL0XTKw8" class="img-responsive img-circle probootstrap-author-photo" alt="Free Template by uicookies.com"></p>
               <p class="mb10 probootstrap-rate">
                 <i class="icon-star"></i>
                 <i class="icon-star"></i>
@@ -129,7 +143,6 @@
               </p>
               <blockquote>
                 <p>Thinh is a child prodigy and certified genius. He taught Jennifer Lawrence how to swing dance for Silver Linings Playbook, but had to cut communication with the starlet when she got too clingy.</p>
-                <p>But seriously, Thinh was responsible for creating,</p>
               </blockquote>
               <p class="mb0">&mdash; Thinh Nguyen</p>
             </div>
@@ -137,7 +150,7 @@
           <div class="clearfix visible-sm-block"></div>
           <div class="col-md-4 col-sm-6 col-xs-12">
             <div class="probootstrap-testimonial">
-              <p><img src="img/person_3.jpg" class="img-responsive img-circle probootstrap-author-photo" alt="Free Template by uicookies.com"></p>
+              <p><img src="https://media.licdn.com/dms/image/C5603AQHkZLMAaptUMw/profile-displayphoto-shrink_800_800/0?e=1559779200&v=beta&t=M6QilX9muZZv2C00VVzCz8EuldPTN2C60BZCnG_mnvI" class="img-responsive img-circle probootstrap-author-photo" alt="Free Template by uicookies.com"></p>
               <p class="mb10 probootstrap-rate">
                 <i class="icon-star"></i>
                 <i class="icon-star"></i>
@@ -175,15 +188,18 @@
                 <textarea type="text" class="form-control"cols="30" rows="10" name="msgBody" placeholder="Write a Message"></textarea>
               </div>
               <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Hit me!">
+                <input type="submit" class="btn btn-primary" value="Send">
               </div>
             </form>
           </div>
+
+
+
           <div class="col-md-3 col-md-push-1">
             <ul class="probootstrap-contact-details">
               <li>
                 <span class="text-uppercase">Email</span>
-                dallastrafficreport@gmail.com
+                <a href="mailto:dallasaccidentreport@gmail.com">dallasaccidentreport@gmail.com</a>
               </li>
               <li>
                 <span class="text-uppercase">Address</span>
@@ -212,11 +228,14 @@
       </div>
     </footer>
 
+    
+
 
      
     <script src="{{ url_for('static', filename='js/scripts.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/config.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.2/d3.min.js"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/heatmap2.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/leaflet-heat.js') }}"></script> 
   </body>

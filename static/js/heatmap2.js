@@ -27,12 +27,16 @@ d3.json(url).then(function(response) {
   var heatArray = [];
   // looping through json data 
   for (var i = 0; i < response.length; i++) {
-    var location = response[i].location;
+    var latitudeC = response[i].Latitude;
+    var longitudeC = response[i].Longitude;
+    console.log(latitudeC)
+    console.log(longitudeC)
     // adding crime scenes to array where heatmap will be applied 
-    if (location) {
-      heatArray.push([location.coordinates[1], location.coordinates[0]]);
-    }
+  
+    heatArray.push([latitudeC, longitudeC]);
+    
   }
+
   // applying heat layer to crime scene array 
   var heat = L.heatLayer(heatArray, {
     radius: 20,
@@ -42,3 +46,5 @@ d3.json(url).then(function(response) {
 });
 
 myMap.invalidateSize();
+
+
