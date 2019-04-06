@@ -1,8 +1,5 @@
 var API_KEY = "pk.eyJ1Ijoic2ZoZWNrbWFuIiwiYSI6ImNqdGdrMmdvMDI0Z280NG51aW56NTN1bmQifQ.r5vF7G3SuSO3YwRIs98mZw";
 
-// ionViewCanLeave(){
-// 	document.getElementById("map").outerHTML = "";
-//}
 var streetmap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
   attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
   maxZoom: 18,
@@ -18,7 +15,6 @@ var darkmap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?
 });
 
 var url = "/dallas_traffic";
-
 
 // grabbing json data
 var response = d3.json(url).then(function(response) {
@@ -38,7 +34,6 @@ var response = d3.json(url).then(function(response) {
         "</h2><hr><h3>" + response[i]['Type  Location'] +
           "</h3><hr><p>" + response[i]['Update Date'] + "</p>"));
     heatArray.push([latitudeC, longitudeC]);
-    
   }
 
   // applying heat layer to crime scene array 
@@ -67,6 +62,30 @@ var response = d3.json(url).then(function(response) {
   L.control.layers(baseMaps, overlayMaps, {
     collapsed: false
   }).addTo(myMap);
+
+  var overlayMaps = {
+    "Heatmap": heat,
+    "Cluster": Cluster
+  };
+
+  var baseMaps = {
+    "Street Map": streetmap,
+    "Dark Map": darkmap
+  };
+
+  var myMap = L.map("map", {
+    center: [32.7763, -96.7969],
+    zoom: 13,
+    layers: [darkmap,heat]
+  });
+  
+  L.control.layers(baseMaps, overlayMaps, {
+    collapsed: false
+  }).addTo(myMap);
+
+  myMap.invalidateSize();
+
+});
 
 
   myMap.invalidateSize();
